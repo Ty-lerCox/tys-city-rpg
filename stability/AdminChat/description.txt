@@ -1,0 +1,3 @@
+Title: Admin Chat
+Author: Dephurites
+Talk to admins only!

@@ -1,0 +1,5 @@
+id: 150
+icon: script_code
+type: Event Mods
+title: Variable Conditional Events
+version: 19

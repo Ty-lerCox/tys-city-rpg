@@ -1,0 +1,5 @@
+id: 673
+icon: kids-toy_16
+type: Event Mods
+title: Bot Events
+version: 9

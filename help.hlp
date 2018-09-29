@@ -1,0 +1,173 @@
+[main]
+\c6Type \c3/help \c6followed by one of the commands to access a category.
+\c6Press pageUp or pageDown to scroll this box.
+
+\c6- \c0category commands \c6- See the various commands at your disposal.
+\c6- \c1category list \c6- Get the scoop on Lots and Jobs.
+\c6- \c2category info \c6- Information on the game's functionality.
+\c6- \c3category jobs \c6- Thats right, jobs.  Jobs, and everything you wanna know about them.
+\c6- \c4category GOD \c6- A list of all moderators+.
+
+[main_adminline]
+\c6- \c7sub admin \c6- Commands that only an admin like you may access.
+
+[category_commands]
+\c6Type \c3/help \c6followed by one of the commands below to access a subcategory.
+ 
+\c6- \c0sub general \c6- General commands that anyone can use.
+\c6- \c1sub special \c6- See other commands that only apply to certain professions.
+
+[sub_general]
+\c0yes \c6/\c3 no \c6- Accept or Reject a service fee.
+\c1giveMoney \c6[\c3amount\c6] - Give money to the player that you're looking at.
+\c2jobs \c6[\c3jobName\c6] - Enter in \c3jobName to apply for a job, or leave it blank to see your options.
+\c4local \c3[\c3text\c6] - Talk to the people closest to you.
+\c5reset \c6 - Resets your account for a price.
+
+[sub_special]
+\c3pardon \c6[\c3name\c6] - Pardon a person from prison. (Official)
+
+[sub_admin]
+\c0grantMoney \c6[\c3amount\c6] [\c3name\c6] - Grants money to \c3name\c6, or the person you look at.
+\c1deductMoney \c6[\c3amount\c6] [\c3name\c6] - Deducts money from \c3name\c6, or the person you look at.
+\c2passTime \c6- Will cause 1 tick to pass.
+\c3pardon \c6[\c3name\c6] - Release \c3name\c6 (even you) from jail.
+\c4addDemerits \c6[\c3amount\c6] [\c3name\c6] - Adds demerits to \c3name\c6, or the person you look at.
+\c5rainMoney \c6[\c3number of bills\c6] - Will spawn \c3number of bills\c6 $1-$5 bills above you. Max is 250.
+\c6eraseRecord \c6[\c3name\c6] - Erases \c3name\c6's criminal record.
+\c7resetUser \c6[\c3name\c6] - Resets \c3name\c6's entire account.
+
+[category_list]
+\c6Type \c3/help list \c6followed by one of the commands below to access a subcategory.
+ 
+\c6- \c0 jobs \c6- Displays a list of jobs.  The jobs of this CityRPG and what they can do.
+\c6- \c1 lots \c6- Displays a list of lots.  The price of all available lots.
+\c6- \c2 items \c6- Displays a list of items.  Items in SellItem and the price b4 markup.
+\c6- \c3 food \c6- Displays a list of food.  Food Prices.
+
+[category_info]
+\c6Type \c3/help sub \c6followed by one of the commands below to access a subcategory.
+ 
+\c6- \c0bounties \c6- Displays information on how bounties work.
+\c6- \c1hunger \c6- Hungry? Here's what to do!
+\c6- \c2sales \c6- How to use events to turn a profit.
+\c6- \c3events \c6- CityRPG uses a wide variety of events. Find out how and what they are.
+\c6- \c4educate \c6- Learn how Education works, and how to use it to your advantage.
+\c6- \c5credits \c6- Lists all the awesome people that helped with the server, and what they did.
+
+[sub_bounties]
+\c6Bounties are a way of making money or getting sweet revenge. Here's what you need to know:
+\c0===========================================================================
+\c0 Bounties, and how to complete them.                                      =
+\c0===========================================================================
+\c6To claim a bounty, you need to kill the person in question.
+\c6BUT only the professions that have the permission to kill a Wanted Man.
+\c0===========================================================================
+\c0 Bounties, that are, and aren't legal.                                    =
+\c0===========================================================================
+\c6Anyone can legally claim a hit (and the rewards), if the hunted is (legally) wanted.
+\c6 --Now the line above refers to people wanted by the police.
+\c6Arresting someone with a baton will give you the prize if the hunted is legally wanted.
+\c6Now, on the other hand.  If the person you kill is not wanted, and you aren't authorized
+\c6to kill the wanted man, you would get at the least 2 stars.  Which in GTA, would have
+\c6cops shooting at you.
+\c0===========================================================================
+\c0 How to place a Bounty.								     =
+\c0===========================================================================
+\c6Placing bounties is actually quite simple, all you need to do is find the bounty office
+\c6and use the terminal.
+\c6Although, if you are not authorized to place bounties, you will become wanted.
+\c6 --Now you will not gain just 2 stars.  You will instead gain half the amount of demerits 
+\c6   claiming a bbounty would orginally give you.
+\c7You may need to scroll up to see the entire thing.
+
+[sub_hunger]
+\c6Hunger gives incentive to buy. Don't, and you will suffer the consiquences.
+\c1===========================================================================
+\c1 How to eat, and sell food.                                               =
+\c1=========================================================================== 
+\c6To eat, you need to find a vendor (event based) which will feed you.
+\c6To sell food, use the \c3sellFood\c6 event.
+\c1===========================================================================
+\c1 Hunger and its Consiquences.                                             =
+\c1===========================================================================
+\c6Do not worry about starving while loading. Hunger will not kick in until you spawn once.
+\c6If you are in jail your hunger will not changed from its designated point.
+\c6If you get to 10% hunger, don't worry, it won't kill you, but after you go under 40% you will start
+\c6losing your paycheck little by little.  Also if you get over 70% Hunger you will begin gaining an
+\c6bonus to your paycheck.
+\c7You may need to scroll up to see the entire thing.
+
+[sub_sales]
+\c6With the new event system, you can run an automated store which earns money for you!
+\c3===========================================================================
+\c3 Sales and how they work.                                                 =
+\c3===========================================================================
+\c6To request money from someone, use a sales event. Use \c3/help sub events\c6 for more info.
+\c6The user will then type \c3yes\c6 or \c3no\c6.
+\c6You can set up the events to handle response with \c3onTransferSuccess\c6 and \c3onTransferDecline\c6.
+\c6You cannot lose money from a transaction. In the '\c3sell\c6' events, weapons and food are autopriced.
+\c6What goes in the box is how much profit you want, which will be added to the price of the service.  Thus Markup.
+
+[sub_educate]
+\c6Education now affects almost everything related to work.
+\c4===========================================================================
+\c4 Education, and what it means.                                            =
+\c4===========================================================================
+\c6Education itself is quite complicated, that is why I am taking the time on this section
+\c6to explain it to you.
+\c4===========================================================================
+\c4 Education, and it's bonuses, requirements, and what it affects.          =
+\c4===========================================================================
+\c6Education only has ups to it, there are no cons.  For example, if you have 1 Education
+\c6and you have the Civilian job, you will recieve a bonus to your paycheck.  Since the
+\c6Civilian job is below an Education of 1.
+\c6 --This does not apply to jobs in-which pays are 0.
+\c6Education is required by every job.  You can check your education by using a simple command,
+\c6I will get to that in another section, A certain amount of education is required for all
+\c6jobs.
+\c4===========================================================================
+\c4 Education, and how to use it to your advantage.                          = 
+\c4===========================================================================
+\c6Now first off, just reading this doesn't do anything for you.  Yes, having an Edu of 0 will
+\c6get you absolutly nowhere.. Edu0:"Highschool drop-out wannabe, but you couldn't make it into
+\c6the first grade".
+\c6Education can be used by typeing the command \c3/education\c6.  Now be aware that you don't
+\c6always have to type that command.  You can just skip to its other sub-commands.
+\c6Education increases by $225 every time you gain a level, or if you can understand even a little
+\c6bit of simple Algebra.  EP(Education Price)=NextEduLvl X 225.  If you can't do that yourself
+\c6the prices are as the following:
+\c6$225     (Education 1)
+\c6$450     (Education 2)
+\c6$675     (Education 3)
+\c6$900     (Education 4)
+\c6$1125    (Education 5)
+\c6$1350    (Education 6)
+\c6$-1      (Education 7 is impossible to get.)
+\c6$100,000 (Education 8 is earnable by typing the command [\c3/reincarnation\c6]
+\c7You may need to scroll up to see the entire thing.
+
+[sub_events]
+\c6Events are complex, so I broke it in to two segments.
+\c6Type '\c3/help sub input\c6' for input events (like onActivate)
+\c6Type '\c3/help sub output\c6' for output events (like setColor)
+
+[sub_input]
+\c1 Input Events
+\c6 - \c3onJobTestPass \c6/\c3 onJobTestFail \c6- The input events related to doJobTest.
+\c6 - \c3onTransferSuccess \c6/\c6 onTransferDecline \c6- Input events related to ALL automated funds transfer.
+\c6'\c3onTransferDecline\c6' has '\c3Player\c6' disabled to help prevent abuse.
+
+[sub_output]
+\c1 Output Events
+\c6 - brick -> \c3doJobTest\c6 [Job] [NoConvicts] - Tests if user's job is [Job]. NoConvicts will fail inmates.
+\c6 - brick -> \c3sellFood\c6 [Food] [Markup] - Feeds a player using the automated sales system.
+\c6 - brick -> \c3sellItem\c6 [Item] [Markup] - Sells an item using the automated system.
+\c6 - brick -> \c3requestFunds\c6 [Service] [Price] - Requests $\c3[Price]\c6 for \c3[Serive]\c6. Charge money for your events.
+
+\c6Note: If you're confused about the automated system, type '\c3/help sub sales\c6' for more info!
+
+[sub_credits]
+
+
+[category_GOD]

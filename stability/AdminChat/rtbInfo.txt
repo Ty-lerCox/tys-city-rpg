@@ -1,0 +1,5 @@
+id: 1347
+icon: medal
+type: Server Mods
+title: Admin Chat
+version: 2

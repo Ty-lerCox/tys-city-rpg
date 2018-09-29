@@ -1,0 +1,6 @@
+Name: 3D Health Bar
+Author: Wrapperup
+Puts a health bar that floats above you. IN 3D!!!
+
+Stealth Mode
+   Makes it so the health bar only shows when you are being damaged or healed.

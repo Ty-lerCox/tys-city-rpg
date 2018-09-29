@@ -1,0 +1,3 @@
+Title: Bot Events
+Author: Amadé
+Events that let you easily create an RPG or Deathmatch with semi-intelligent Botss.

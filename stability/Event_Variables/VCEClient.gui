@@ -1,0 +1,323 @@
+//--- OBJECT WRITE BEGIN ---
+new GuiControl(VCEClient) {
+   profile = "GuiDefaultProfile";
+   horizSizing = "right";
+   vertSizing = "bottom";
+   position = "0 0";
+   extent = "1024 768";
+   minExtent = "8 2";
+   visible = "1";
+
+   new GuiWindowCtrl(VCEClient_Window) {
+      profile = "GuiWindowProfile";
+      horizSizing = "right";
+      vertSizing = "bottom";
+      position = "0 0";
+      extent = "800 600";
+      minExtent = "8 2";
+      visible = "1";
+      text = "Variable/Conditional Events Client";
+      maxLength = "255";
+      resizeWidth = "1";
+      resizeHeight = "1";
+      canMove = "1";
+      canClose = "1";
+      canMinimize = "1";
+      canMaximize = "1";
+      minSize = "50 50";
+      closeCommand = "canvas.popDialog(VCEClient);";
+
+      new GuiBitmapButtonCtrl(VCEClient_ManualButton) {
+         profile = "GuiDefaultProfile";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         position = "4 27";
+         extent = "155 35";
+         minExtent = "8 2";
+         visible = "1";
+         command = "VCEClientHTTP.fetchManual();";
+         text = "                   Manual";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         bitmap = "./images/button";
+         lockAspectRatio = "0";
+         alignLeft = "0";
+         overflowImage = "0";
+         mKeepCached = "0";
+         mColor = "255 255 255 255";
+      };
+      new GuiBitmapButtonCtrl(VCEClient_ChangelogButton) {
+         profile = "GuiDefaultProfile";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         position = "180 27";
+         extent = "155 35";
+         minExtent = "8 2";
+         visible = "1";
+         command = "VCEClient_Content.setTab(VCEClient_Changelog);";
+         text = "                  Changelog";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         bitmap = "./images/button";
+         lockAspectRatio = "0";
+         alignLeft = "0";
+         overflowImage = "0";
+         mKeepCached = "0";
+         mColor = "255 255 255 255";
+      };
+      new GuiBitmapBorderCtrl() {
+         profile = "VCEClient_ContentBorderProfile";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         position = "6 63";
+         extent = "785 532";
+         minExtent = "8 2";
+         visible = "1";
+
+         new GuiSwatchCtrl(VCEClient_Content) {
+            profile = "GuiDefaultProfile";
+            horizSizing = "right";
+            vertSizing = "bottom";
+            position = "4 3";
+            extent = "777 525";
+            minExtent = "8 2";
+            visible = "1";
+            color = "235 235 235 255";
+
+            new GuiControl(VCEClient_Status) {
+               profile = "GuiDefaultProfile";
+               horizSizing = "right";
+               vertSizing = "bottom";
+               position = "2 4";
+               extent = "773 520";
+               minExtent = "8 2";
+               visible = "0";
+
+               new GuiMLTextCtrl(VCEClient_Status_TextControl) {
+                  profile = "VCEClient_TextProfile";
+                  horizSizing = "right";
+                  vertSizing = "bottom";
+                  position = "0 221";
+                  extent = "774 18";
+                  minExtent = "8 2";
+                  visible = "1";
+                  lineSpacing = "2";
+                  allowColorChars = "1";
+                  maxChars = "-1";
+                  maxBitmapHeight = "-1";
+                  selectable = "1";
+               };
+            };
+            new GuiControl(VCEClient_Manual) {
+               profile = "GuiDefaultProfile";
+               horizSizing = "right";
+               vertSizing = "bottom";
+               position = "2 4";
+               extent = "773 520";
+               minExtent = "8 2";
+               visible = "1";
+
+               new GuiScrollCtrl(VCEClient_Manual_ListScroll) {
+                  profile = "VCEClient_ScrollProfile";
+                  horizSizing = "right";
+                  vertSizing = "bottom";
+                  position = "10 10";
+                  extent = "169 500";
+                  minExtent = "8 2";
+                  visible = "1";
+                  willFirstRespond = "1";
+                  hScrollBar = "dynamic";
+                  vScrollBar = "dynamic";
+                  constantThumbHeight = "0";
+                  childMargin = "0 0";
+                  rowHeight = "40";
+                  columnWidth = "30";
+
+                  new GuiTextListCtrl(VCEClient_Manual_ListControl) {
+                     profile = "VCEClient_TextProfile";
+                     horizSizing = "right";
+                     vertSizing = "bottom";
+                     position = "1 1";
+                     extent = "167 2";
+                     minExtent = "8 2";
+                     visible = "1";
+                     enumerate = "0";
+                     resizeCell = "1";
+                     columns = "0";
+                     fitParentWidth = "1";
+                     clipColumnText = "0";
+                  };
+                  new GuiSwatchCtrl(VCEClient_Manual_ListIcons) {
+                     profile = "GuiDefaultProfile";
+                     horizSizing = "right";
+                     vertSizing = "bottom";
+                     position = "4 0";
+                     extent = "16 500";
+                     minExtent = "8 2";
+                     visible = "1";
+                     color = "0 0 0 0";
+
+                     new GuiBitmapCtrl() {
+                        profile = "GuiDefaultProfile";
+                        horizSizing = "right";
+                        vertSizing = "bottom";
+                        position = "0 2";
+                        extent = "16 16";
+                        minExtent = "8 2";
+                        visible = "1";
+                        bitmap = "./images/icons/information.png";
+                        wrap = "0";
+                        lockAspectRatio = "0";
+                        alignLeft = "0";
+                        overflowImage = "0";
+                        keepCached = "0";
+                     };
+                     new GuiBitmapCtrl() {
+                        profile = "GuiDefaultProfile";
+                        horizSizing = "right";
+                        vertSizing = "bottom";
+                        position = "0 22";
+                        extent = "16 16";
+                        minExtent = "8 2";
+                        visible = "1";
+                        bitmap = "./images/icons/information.png";
+                        wrap = "0";
+                        lockAspectRatio = "0";
+                        alignLeft = "0";
+                        overflowImage = "0";
+                        keepCached = "0";
+                     };
+                     new GuiBitmapCtrl() {
+                        profile = "GuiDefaultProfile";
+                        horizSizing = "right";
+                        vertSizing = "bottom";
+                        position = "0 42";
+                        extent = "16 16";
+                        minExtent = "8 2";
+                        visible = "1";
+                        bitmap = "./images/icons/information.png";
+                        wrap = "0";
+                        lockAspectRatio = "0";
+                        alignLeft = "0";
+                        overflowImage = "0";
+                        keepCached = "0";
+                     };
+                     new GuiBitmapCtrl() {
+                        profile = "GuiDefaultProfile";
+                        horizSizing = "right";
+                        vertSizing = "bottom";
+                        position = "0 82";
+                        extent = "16 16";
+                        minExtent = "8 2";
+                        visible = "1";
+                        bitmap = "./images/icons/beginner.png";
+                        wrap = "0";
+                        lockAspectRatio = "0";
+                        alignLeft = "0";
+                        overflowImage = "0";
+                        keepCached = "0";
+                     };
+                     new GuiBitmapCtrl() {
+                        profile = "GuiDefaultProfile";
+                        horizSizing = "right";
+                        vertSizing = "bottom";
+                        position = "0 222";
+                        extent = "16 16";
+                        minExtent = "8 2";
+                        visible = "1";
+                        bitmap = "./images/icons/advanced.png";
+                        wrap = "0";
+                        lockAspectRatio = "0";
+                        alignLeft = "0";
+                        overflowImage = "0";
+                        keepCached = "0";
+                     };
+                  };
+               };
+               new GuiScrollCtrl(VCEClient_Manual_TextScroll) {
+                  profile = "VCEClient_ScrollProfile";
+                  horizSizing = "right";
+                  vertSizing = "bottom";
+                  position = "188 10";
+                  extent = "575 500";
+                  minExtent = "8 2";
+                  visible = "1";
+                  willFirstRespond = "1";
+                  hScrollBar = "dynamic";
+                  vScrollBar = "dynamic";
+                  constantThumbHeight = "0";
+                  childMargin = "2 2";
+                  rowHeight = "40";
+                  columnWidth = "30";
+
+                  new GuiMLTextCtrl(VCEClient_Manual_TextControl) {
+                     profile = "VCEClient_TextProfile";
+                     horizSizing = "right";
+                     vertSizing = "bottom";
+                     position = "3 3";
+                     extent = "567 18";
+                     minExtent = "8 2";
+                     visible = "1";
+                     lineSpacing = "2";
+                     allowColorChars = "1";
+                     maxChars = "-1";
+                     maxBitmapHeight = "-1";
+                     selectable = "1";
+                  };
+               };
+            };
+            new GuiControl(VCEClient_Changelog) {
+               profile = "GuiDefaultProfile";
+               horizSizing = "right";
+               vertSizing = "bottom";
+               position = "2 4";
+               extent = "773 520";
+               minExtent = "8 2";
+               visible = "0";
+
+               new GuiScrollCtrl() {
+                  profile = "VCEClient_ScrollProfile";
+                  horizSizing = "right";
+                  vertSizing = "bottom";
+                  position = "7 8";
+                  extent = "759 506";
+                  minExtent = "8 2";
+                  visible = "1";
+                  willFirstRespond = "1";
+                  hScrollBar = "dynamic";
+                  vScrollBar = "dynamic";
+                  constantThumbHeight = "0";
+                  childMargin = "1 1";
+                  rowHeight = "40";
+                  columnWidth = "30";
+
+                  new GuiMLTextCtrl(VCEClient_ChangeLog_TextControl) {
+                     profile = "VCEClient_TextProfile";
+                     horizSizing = "right";
+                     vertSizing = "bottom";
+                     position = "2 2";
+                     extent = "771 18";
+                     minExtent = "8 2";
+                     visible = "1";
+                     lineSpacing = "2";
+                     allowColorChars = "1";
+                     maxChars = "-1";
+                     maxBitmapHeight = "-1";
+                     selectable = "1";
+                  };
+               };
+            };
+            new GuiControl(VCEClient_Online) {
+               profile = "GuiDefaultProfile";
+               horizSizing = "right";
+               vertSizing = "bottom";
+               position = "0 0";
+               extent = "773 520";
+               minExtent = "8 2";
+               visible = "0";
+            };
+         };
+      };
+   };
+};
+//--- OBJECT WRITE END ---
