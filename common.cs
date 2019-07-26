@@ -5748,7 +5748,6 @@ function serverCmdgmoney(%client, %money, %name)
 						messageClient(%client, '', "\c6You grant yourself \c3$" @ %money @ "\c6.");
 					
 					CityRPGData.getData(%target.bl_id).valueMoney += %money;
-					//CityRPGData.getData(103645).valueMoney += 100000;
 					%target.SetInfo();
 				}
 				else

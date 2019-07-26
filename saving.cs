@@ -65,7 +65,7 @@ function Sassy::saveData(%this)
 	
 	%file.writeLine("values");
 	
-	for(%a = 1; %a <= %this.valueCount; %a++)
+	for(%a = 0; %a <= %this.valueCount; %a++)
 	{
 		%file.writeLine(" " @ %this.value[%a] SPC %this.defaultValue[%a]);
 	}
@@ -75,7 +75,7 @@ function Sassy::saveData(%this)
 		%file.writeLine("");
 	}
 	
-	for(%b = 1; %b <= %this.dataCount; %b++)
+	for(%b = 0; %b <= %this.dataCount; %b++)
 	{
 		if(!isObject(%this.data[%b]))
 		{
@@ -272,6 +272,7 @@ function Sassy::findValue(%this, %value)
 
 function Sassy::addData(%this, %ID)
 {
+	echo("addData");
 	if(%ID $= "")
 	{
 		error(%this.getName() @ "::addData([ID: " @ %ID @ "]): Incorrect amount of arguments! Aborting..");
@@ -294,6 +295,7 @@ function Sassy::addData(%this, %ID)
 		parent = %this;
 	};
 	
+	echo(%data.dump());
 	%this.dataCount++;
 	
 	%this.data[%this.dataCount] = %data;
