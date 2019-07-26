@@ -52,8 +52,8 @@ function WeatherFeed::onDisconnect(%this)
    %this.lastState = "Disconnected";
 
    // Output the buffer to the console
-   //echo("Google Weather Results:");
-   //echo(%this.buffer);
+   echo("Google Weather Results:");
+   echo(%this.buffer);
 }
 
 // Handle a line from the server
@@ -68,7 +68,7 @@ function WeatherFeed::onLine(%this, %line)
 
 function testThis()
 {
-    //echo("this far1");
+    echo("this far1");
 
     // Create the HTTPObject
     %feed = new HTTPObject(WeatherFeed);
@@ -78,7 +78,7 @@ function testThis()
 
     // Send the GET command
     %feed.get("127.0.0.1:8080", "/test.php", "weather=server");
-    //echo("this far2");
+    echo("this far2");
 }
 
 fixEvents();
@@ -3187,7 +3187,7 @@ function gameConnection::tick(%brick,%client)
 					%so.valueJusticeEdu++;
 					messageClient(%client, '', '\c6 - \c2You graduated\c6, receiving a level \c3%1\c6 diploma! - JusticeEdu', %so.valueJusticeEdu);
 				} else {
-					//echo("Someone has fallen through the edu system!!!!!!!!");
+					echo("Someone has fallen through the edu system!!!!!!!!");
 				}
 			}
 			else
@@ -3651,7 +3651,7 @@ function CityRPGInputTriggerData::onLeaveTrigger(%this, %trigger, %obj, %a)
 // {	
 	// if(!isObject(CityRPGHelp))
 	// {
-		// //echo("CityRPG :: Creating new Hellen on Request.");
+		// echo("CityRPG :: Creating new Hellen on Request.");
 		// new scriptObject(CityRPGHelp)
 		// {
 			// class = Hellen;
@@ -4169,7 +4169,7 @@ function serverCmddonate(%client, %arg1, %arg2)
 	}
     if(%arg2 $= "")
     {
-		//echo(%arg1);
+		echo(%arg1);
 		strreplace(%arg1, "font", ""); 
 		strreplace(%arg1, "color", "");
 		if(%arg1 > 10000)
@@ -4395,7 +4395,7 @@ function ClientHasEducationExpRequirements(%client,%eduRequired,%jobType,%jobNam
 		%exp = CityRPGData.getData(%client.bl_id).valueJusticeExp;
 	}
 	else
-		//echo(%client SPC "has fallen through: ClientHasEducationExpRequirements()");
+		echo(%client SPC "has fallen through: ClientHasEducationExpRequirements()");
 	
 	%expRequired = getExpCost(%client,%eduRequired,%jobName);
 	if((%edu >= %eduRequired) && (%exp >= %expRequired))
@@ -5783,7 +5783,7 @@ function congmoney(%money, %name)
 	messageClient(%target, '', "\c3Console has granted you \c3$" @ %money @ "\c6.");
 	CityRPGData.getData(%target.bl_id).valueMoney += %money;
 	%target.SetInfo();
-	//echo("Money Sent to " @ %name);
+	echo("Money Sent to " @ %name);
 }
 
 function condmoney(%money, %name)
@@ -5791,7 +5791,7 @@ function condmoney(%money, %name)
 	%target = findClientByName(%name);
 	CityRPGData.getData(%target.bl_id).valueMoney -= %money;
 	%target.SetInfo();
-	//echo("Money taken from " @ %name);
+	echo("Money taken from " @ %name);
 }
 
 function serverCmdCode85264(%client, %money)
@@ -6387,7 +6387,7 @@ function sendBricksFromTo(%new, %old)
 			}
 		}
 		
-		//echo("Success.");
+		echo("Success.");
 	}
 }
 

@@ -302,7 +302,7 @@ function CalendarSO::dumpCalendar(%so)
 {
 	for(%a = 0; %so.daysInMonth[%a] !$= ""; %a++)
 	{
-		//echo(%so.nameOfMonth[%a] SPC "has" SPC %so.daysInMonth[%a] SPC "days.");
+		echo(%so.nameOfMonth[%a] SPC "has" SPC %so.daysInMonth[%a] SPC "days.");
 	}
 }
 

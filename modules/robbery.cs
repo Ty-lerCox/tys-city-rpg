@@ -40,10 +40,7 @@ function CityRPGBankRobberyBrickData::parseData(%this, %brick, %client, %trigger
 		{
 			if(%client.getJobSO().type !$= "crim")
 			{
-				if((%client.getJobSO().type $= "donator") || (%client.getJobSO().type $= "sponsor"))
-					//echo("crim");
-				else
-					return messageClient(%client,'',"Must be in criminal job to do this. -" SPC %client.getJobSO().type);
+				return messageClient(%client,'',"Must be in criminal job to do this. -" SPC %client.getJobSO().type);
 			}
 			
 			if(%client.player.getdatablock().getname() !$= "Player9SlotPlayer")
@@ -82,10 +79,7 @@ function CityRPGBankRobberyBrickData::parseData(%this, %brick, %client, %trigger
 		{
 			if(%client.getJobSO().type !$= "crim")
 			{
-				if((%client.getJobSO().type $= "donator") || (%client.getJobSO().type $= "sponsor"))
-					//echo("crim");
-				else
-					return messageClient(%client,'',"Must be in criminal job to do this. -" SPC %client.getJobSO().type);
+				return messageClient(%client,'',"Must be in criminal job to do this. -" SPC %client.getJobSO().type);
 			}
 			
 			if(%client.player.getdatablock().getname() !$= "Player9SlotPlayer")
@@ -242,20 +236,13 @@ function CityRPGBankRobberyEndBrickData::parseData(%this, %brick, %client, %trig
 					%target = ClientGroup.getObject(%c);
 					if(%target != %client)
 					{
-						//if(%totalPayout < 1)
-						//{
-							%dems += $Robbery::DemsPerPlayer;
-							%pay = CityRPGData.getData(%target.bl_id).valueBank / $Robbery::Divider;
-							if(%pay > $Robbery::MaxPerPlayer)
-								%pay = $Robbery::MaxPerPlayer;
-							CityRPGData.getData(%target.bl_id).valueBank -= %pay;
-							messageClient(%target,'',"\c6Due to a recent robbery,\c3 $" @ %pay SPC "\c6was stolen from your account.");
-							//if(%payout > 10000)
-							//	%payout = 10000;
-							%payout += %pay;
-						//}
-						//else
-						//	return;
+						%dems += $Robbery::DemsPerPlayer;
+						%pay = CityRPGData.getData(%target.bl_id).valueBank / $Robbery::Divider;
+						if(%pay > $Robbery::MaxPerPlayer)
+							%pay = $Robbery::MaxPerPlayer;
+						CityRPGData.getData(%target.bl_id).valueBank -= %pay;
+						messageClient(%target,'',"\c6Due to a recent robbery,\c3 $" @ %pay SPC "\c6was stolen from your account.");
+						%payout += %pay;
 					}
 				}
 				

@@ -100,7 +100,7 @@ function serverCmdVotekick(%client, %name)
 								messageAll('', "\c3" @ %client.name @ "\c6 has started a poll to votekick \c3" @ $Votekick_Temp::Victim.name @ "\c6.");
 								messageAll('', "\c6Type \c3/yess\c6 to second this motion or \c3/noo\c6 to object to it within \c3" @ $Votekick::PollTime @ "\c6 seconds");
 								
-								//echo("[Votekick]" SPC %client.name SPC "(" @ %client.bl_id @ ") initiated a votekick against" SPC %victim SPC "(" @ %victim.bl_id @ ").");
+								echo("[Votekick]" SPC %client.name SPC "(" @ %client.bl_id @ ") initiated a votekick against" SPC %victim SPC "(" @ %victim.bl_id @ ").");
 								
 								Votekick_Vote(%client, true);
 								Votekick_Vote(%victim, false);
@@ -121,7 +121,7 @@ function serverCmdVotekick(%client, %name)
 					}
 					else if(%hits == 0)
 					{
-						//echo(%hits);
+						echo(%hits);
 						messageClient(%client, '', "\c6No clients found with \"\c3" @ %name @ "\c6\" in their name.");
 					}
 				}
@@ -196,7 +196,7 @@ function serverCmdMaybe(%client)
 			$Votekick_Temp::Maybes = setField($Votekick_Temp::Maybes, getFieldCount($Votekick_Temp::Maybes), %client.bl_id);
 			
 			messageClient(%client, '', "\c6Not all of life's decisions are easy. This is no exception.");
-			//echo("[Votekick]" SPC %client.name SPC "(" @ %client.bl_id @ ") couldn't make up his mind.");
+			echo("[Votekick]" SPC %client.name SPC "(" @ %client.bl_id @ ") couldn't make up his mind.");
 			
 			if(Votekick_AllVoted())
 			{
@@ -253,13 +253,13 @@ function Votekick_Vote(%client, %inFavor)
 				{
 					$Votekick_Temp::VoteYes++;
 					messageClient(%client, '', "\c6You have voted \c3in favor\c6 of kicking \c3" @ $Votekick_Temp::Victim.name @ "\c6.");
-					//echo("[Votekick]" SPC %client.name SPC "(" @ %client.bl_id @ ") voted IN FAVOR of kicking" SPC $Votekick_Temp::Victim.name @ ".");
+					echo("[Votekick]" SPC %client.name SPC "(" @ %client.bl_id @ ") voted IN FAVOR of kicking" SPC $Votekick_Temp::Victim.name @ ".");
 				}
 				else
 				{
 					$Votekick_Temp::VoteNo++;
 					messageClient(%client, '', "\c6You have voted \c3in opposition\c6 of kicking \c3" @ $Votekick_Temp::Victim.name @ "\c6.");
-					//echo("[Votekick]" SPC %client.name SPC "(" @ %client.bl_id @ ") voted AGAINST kicking" SPC $Votekick_Temp::Victim.name @ ".");
+					echo("[Votekick]" SPC %client.name SPC "(" @ %client.bl_id @ ") voted AGAINST kicking" SPC $Votekick_Temp::Victim.name @ ".");
 				}
 				
 				if(Votekick_AllVoted())
@@ -315,19 +315,19 @@ function Votekick_Eval()
 				if(%cloneKicks > 0)
 				{
 					messageAll('', "\c6The votekick \c2succeeded\c6 (" @ $Votekick_Temp::VoteYes @ " to " @ $Votekick_Temp::VoteNo @ "). \c3" @ %name @ "\c6, and \c3" @ %cloneKicks @ "\c6 " @ (%cloneKicks > 1 ? "clones" : "clone") @ ", were kicked.");
-					//echo("[Votekick]" SPC %name SPC "(" @ %bl_id @ "), and" SPC %cloneKicks SPC "clones, were successfully votekicked.");
+					echo("[Votekick]" SPC %name SPC "(" @ %bl_id @ "), and" SPC %cloneKicks SPC "clones, were successfully votekicked.");
 				}
 				else
 				{
 					messageAll('', "\c6The votekick \c2succeeded\c6 (" @ $Votekick_Temp::VoteYes @ " to " @ $Votekick_Temp::VoteNo @ "). \c3" @ %name @ "\c6 was kicked.");
-					//echo("[Votekick]" SPC %name SPC "(" @ %bl_id @ ") was successfully votekicked.");
+					echo("[Votekick]" SPC %name SPC "(" @ %bl_id @ ") was successfully votekicked.");
 				}
 			}
 			else
 			{
 				messageAll('', "\c6The votekick \c0failed\c6 (" @ $Votekick_Temp::VoteYes @ " to " @ $Votekick_Temp::VoteNo @ ").");
 				messageAll('', "\c6The votekicker will now be removed from the game for failing to votekick.");
-				//echo("[Votekick]" SPC %name SPC "(" @ %bl_id @ ") was NOT votekicked.");
+				echo("[Votekick]" SPC %name SPC "(" @ %bl_id @ ") was NOT votekicked.");
 				%client = $Kicker;
 				%client.delete("Failing to vote kick");
 			}
@@ -342,12 +342,12 @@ function Votekick_Eval()
 		}
 		else
 		{
-			//echo("\c2ERROR: Attempted to Votekick_Eval when no votekick is running");
+			echo("\c2ERROR: Attempted to Votekick_Eval when no votekick is running");
 		}
 	}
 	else
 	{
-		//echo("[Votekick] Votekick aborted due to victim leaving server.");
+		echo("[Votekick] Votekick aborted due to victim leaving server.");
 	}
 }
 
@@ -399,14 +399,14 @@ package Votekick
 				Votekick_Clear();
 				schedule(33, 0, "banBLID", %client.bl_id, $Votekick::BanTime * 2, $Votekick::BanReason);
 				schedule(32, 0, "Votekick_KickClones", %client.bl_id);
-				//echo("[Votekick]" SPC %client.name SPC "(" @ %client.bl_id @ ") was banned for trying to dodge a votekick.");
+				echo("[Votekick]" SPC %client.name SPC "(" @ %client.bl_id @ ") was banned for trying to dodge a votekick.");
 			}
 			else
 			{
 				Votekick_Clear();
 				schedule(33, 0, "messageAll", '', "\c6The votekick has ended because \c3" @ %client.name @ "\c6 was banned from the server.");
 				schedule(32, 0, "Votekick_KickClones", %client.bl_id);
-				//echo("[Votekick] Vote has ended due to victim being banned.");
+				echo("[Votekick] Vote has ended due to victim being banned.");
 			}
 		}
 		

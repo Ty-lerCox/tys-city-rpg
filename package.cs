@@ -1892,7 +1892,7 @@ package CityRPG_MainPackage
 						messageClient(%subClient, '', "\c3[<color:777777>Inmate\c3]" SPC %client.name @ "<color:777777>:" SPC %text);
 					}
 				}
-				//echo("(Convict Chat)" SPC %client.name @ ":" SPC %text);
+				echo("(Convict Chat)" SPC %client.name @ ":" SPC %text);
 			}
 			else
 			{

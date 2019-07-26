@@ -8,7 +8,7 @@ package FamilyMod
 				$families[%i] = %string;
 				%i = 26;
 			} else if($families[%i] $= %string) {
-		        //echo(%i);
+		        echo(%i);
 				%i = 26;
 			}
 		}
@@ -576,45 +576,45 @@ package FamilyMod
 			
 			
 			if((CityRPGData.getData(%client.BL_ID).displayjob == 0) && (CityRPGData.getData(%client.BL_ID).displayedu == 0))
-				%job//echo = "  \c7(\c7" @ %jobName @ "-" @ intToRoman(averageEdu(%client)) @ %client.colorMsg @ "\c7)";
+				%jobecho = "  \c7(\c7" @ %jobName @ "-" @ intToRoman(averageEdu(%client)) @ %client.colorMsg @ "\c7)";
 			else if((CityRPGData.getData(%client.BL_ID).displayjob == 1) && (CityRPGData.getData(%client.BL_ID).displayedu == 0))
-				%job//echo = "  \c7(\c7" @ intToRoman(averageEdu(%client)) @ %client.colorMsg @ "\c7)";
+				%jobecho = "  \c7(\c7" @ intToRoman(averageEdu(%client)) @ %client.colorMsg @ "\c7)";
 			else if((CityRPGData.getData(%client.BL_ID).displayjob == 0) && (CityRPGData.getData(%client.BL_ID).displayedu == 1))
-				%job//echo = "  \c7(\c7" @ %jobName @ %client.colorMsg @ "\c7)";
+				%jobecho = "  \c7(\c7" @ %jobName @ %client.colorMsg @ "\c7)";
 			else
-				%job//echo = "";
+				%jobecho = "";
 				
 			if(CityRPGData.getData(%client.BL_ID).displaygang == 0)
-				%gang//echo = %gangTag;
+				%gangecho = %gangTag;
 			else
 			{
 				if(getGang(CityRPGData.getData(%client.bl_id).valueGangID, "Warz"))
-					%gang//echo = %gangTag;
+					%gangecho = %gangTag;
 				else
-					%gang//echo = "";
+					%gangecho = "";
 			}	
-			//%rep//echo = "  (" @ %client.rep @ %client.colorMsg @ "\c7)";
-			%rep//echo = "";
+			//%repecho = "  (" @ %client.rep @ %client.colorMsg @ "\c7)";
+			%repecho = "";
 			if(CityRPGData.getData(%client.BL_ID).displaybusiness == 0)
 				if(getBusiness(CityRPGData.getData(%client.bl_id).valueBusID, "Name") $= "")
-					%business//echo = "";
+					%businessecho = "";
 				else
-					%business//echo = "  \c7(\c7" @ getBusiness(CityRPGData.getData(%client.bl_id).valueBusID, "Name") @ "-" @ CityRPGData.getData(%client.bl_id).valueBusPosition @ "-" @ CityRPGData.getData(%client.bl_id).valueBusStocks @ "\c7)";
+					%businessecho = "  \c7(\c7" @ getBusiness(CityRPGData.getData(%client.bl_id).valueBusID, "Name") @ "-" @ CityRPGData.getData(%client.bl_id).valueBusPosition @ "-" @ CityRPGData.getData(%client.bl_id).valueBusStocks @ "\c7)";
 			else
-				%business//echo = "";
+				%businessecho = "";
 				
 			if(CityRPGData.getData(%client.BL_ID).displayfamily == 0)
 				if(%client.family $= "")
-					%family//echo = "";
+					%familyecho = "";
 				else
-					%family//echo = "  \c7(<color:66ff99>" @ %client.family @ "-" @ %client.relationship @ "\c7)";
+					%familyecho = "  \c7(<color:66ff99>" @ %client.family @ "-" @ %client.relationship @ "\c7)";
 			else
-				%family//echo = "";
+				%familyecho = "";
 		if(!$Game::Display::Font)
 			$Game::Display::Font = "<font:arial:12>";
 
 		if(!$Game::NoDisplays)
-			%display = $Game::Display::Font @ %job//echo SPC %gang//echo;
+			%display = $Game::Display::Font @ %jobecho SPC %gangecho;
 		else
 			%display = "";
 		

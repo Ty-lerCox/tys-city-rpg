@@ -38,7 +38,7 @@ function Sassy::onAdd(%this)
 	
 	if(isFile(%this.dataFile))
 	{
-		//echo(%this.getName() @ "::onAdd(): Previous save file found. Loading..");
+		echo(%this.getName() @ "::onAdd(): Previous save file found. Loading..");
 		
 		%this.loadData();
 		
@@ -272,7 +272,7 @@ function Sassy::findValue(%this, %value)
 
 function Sassy::addData(%this, %ID)
 {
-	//echo("addData");
+	echo("addData");
 	if(%ID $= "")
 	{
 		error(%this.getName() @ "::addData([ID: " @ %ID @ "]): Incorrect amount of arguments! Aborting..");
@@ -295,7 +295,7 @@ function Sassy::addData(%this, %ID)
 		parent = %this;
 	};
 	
-	//echo(%data.dump());
+	echo(%data.dump());
 	%this.dataCount++;
 	
 	%this.data[%this.dataCount] = %data;

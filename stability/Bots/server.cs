@@ -131,7 +131,7 @@ function serverCmdApplyAv(%client)
 		%client.lastApplyAv = getSimTime();
 		for(%i = 0; %i < %brick.numEvents; %i++)
 		{
-			//echo(%brick.eventOutput[%i]);
+			echo(%brick.eventOutput[%i]);
 			if(%brick.eventInput[%i] == "OnBotsspawn")// && %brick.eventOutput[%i] == $EditAppearance)
 			{
 				continue;
@@ -208,7 +208,7 @@ function serverCmdApplyAv(%client)
 				%blanks++;
 				continue;
 			}
-			//echo(%eventDelay[%i] SPC %eventEnabled[%i] SPC %eventInput[%i] SPC %eventOutputAppendClient[%i] SPC %eventOutputIdx[%i] SPC %eventOutputParameter[%i, 0] SPC %eventTarget[%i] SPC %eventTargetIdx[%i]);
+			echo(%eventDelay[%i] SPC %eventEnabled[%i] SPC %eventInput[%i] SPC %eventOutputAppendClient[%i] SPC %eventOutputIdx[%i] SPC %eventOutputParameter[%i, 0] SPC %eventTarget[%i] SPC %eventTargetIdx[%i]);
 			%brick.eventDelay[%i + %blanks] = %eventDelay[%i];
 			%brick.eventEnabled[%i + %blanks] = %eventEnabled[%i];
 			%brick.eventInput[%i + %blanks] = %eventInput[%i];

@@ -6,7 +6,7 @@ function Hellen::onAdd(%this)
 {
 	if(%this.getName() $= "")
 	{
-		//echo("Hellen::onAdd(): This database has no name! Deleting database..");
+		echo("Hellen::onAdd(): This database has no name! Deleting database..");
 		
 		%this.schedule(0, "delete");
 		
@@ -32,7 +32,7 @@ function Hellen::loadData(%this)
 {
 	if(!isFile("./help.hlp"))
 	{
-		//echo(%this.getName() @ "::onAdd(): Help file not found!");
+		echo(%this.getName() @ "::onAdd(): Help file not found!");
 		
 		return false;
 	}

@@ -10,7 +10,7 @@ function servercmdAdv(%client , %ad, %ad2, %ad3, %ad4, %ad5, %ad6, %ad7, %ad8, %
 	//First step is to check if the user is not in the timeout
 	if(!%client.canAdv == 1 || %client.isAdmin)
 	{
-		//echo(strlen(%ad));
+		echo(strlen(%ad));
 		//Alright timeout hasnt been reached
 		//check if the ad is nothing
 		if(strlen(%ad) == 0)
@@ -51,11 +51,11 @@ function AdvTimeout(%client)
 	
 	%client.canAdv = 1;
 	schedule($AdvTimeout * 1000, 0 , "AdvTimein", %client);
-	//echo("timeeed");
+	echo("timeeed");
 }
  
 function AdvTimein(%client)
 {
-	//echo(%client);
+	echo(%client);
 	%client.canAdv = 0;
 }
