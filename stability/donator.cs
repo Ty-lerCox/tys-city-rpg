@@ -114,7 +114,7 @@ function MakeDonatorAuto(%Victim)
         else
         {
                 messageAll('MsgAdminForce', '\c4%1 has become Donator (Auto)', %victim.name);     
-				Echo(%victim.name @ " has become Donator (Auto)");
+				//echo(%victim.name @ " has become Donator (Auto)");
                 schedule(100, 0, Donator_addAutoStatus, %victim);
 
                 %Victim.isDonator = true;
@@ -197,7 +197,7 @@ function UnDonatorAuto(%client, %Victim)
         else
         {
         messageAll('MsgAdminForce', '\c4%1 has been De-Donatored (Auto)', %victim.name);    
-		echo(%victim.name @ " has been de-donatored");
+		//echo(%victim.name @ " has been de-donatored");
 	schedule(100, 0, Donator_removeAutoStatus, %victim);    
 
         %Victim.isDonator = false;

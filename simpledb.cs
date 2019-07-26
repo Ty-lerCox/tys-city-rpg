@@ -61,7 +61,7 @@ function SimpleDB::onAdd(%this)
 	}
 	if(isFile(%this.saveFile) && %this.autoLoad)
 	{
-		if($SimpleDB::Debug >= 2) echo("SimpleDB: Instance \"" @ %this.getName() @ "\" inital save file load...");
+		if($SimpleDB::Debug >= 2) //echo("SimpleDB: Instance \"" @ %this.getName() @ "\" inital save file load...");
 		if(%this.loadData() $= 1)
 			%this.hasloaded = 1;
 	}

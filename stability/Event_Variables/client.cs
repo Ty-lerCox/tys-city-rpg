@@ -128,7 +128,7 @@ function VCEClientHttp::onConnectFailed(%this)
 function VCEClientHTTP::onLine(%this,%line)
 {
 	if(%this.debug)
-		echo(%line);
+		//echo(%line);
 	switch$(%this.cmd)
 	{
 		case "FETCHMANUALCACHE":
@@ -314,7 +314,7 @@ package VCE_Client
 activatePackage(VCE_Client);
 function clientCmdVCE_Handshake(%version)
 {
-	echo("VCEClient: Server is running VCE " @ %version @ ".");
+	//echo("VCEClient: Server is running VCE " @ %version @ ".");
 	if($Pref::Client::ShowVCEHandshake)
 		NewChatSO.addLine("<font:Palatino Linotype:24>\c6This server is running \c2VCE \c0" @ %version @ "\c6.");
 	commandToServer('VCE_Handshake');

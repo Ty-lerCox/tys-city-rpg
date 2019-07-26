@@ -32,7 +32,7 @@ package CellPhone
 			%target = findclientbybl_id(%client.bl_idcalling);
 			messageclient(%target, '', '\c3[\c2Call \c6- \c4%1\c3]: \c6%2', %client.name, %text);
 			messageclient(%client, '', '\c3[\c2Call \c6- \c4%1\c3]: \c6%2', %client.name, %text);
-			echo("[Call - " @ %jj @ %client.name @ "]: " @ %text);
+			//echo("[Call - " @ %jj @ %client.name @ "]: " @ %text);
 			return;
 		}
 		else if(%client.emergency == 1)

@@ -41,7 +41,7 @@ function CityRPGBankRobberyBrickData::parseData(%this, %brick, %client, %trigger
 			if(%client.getJobSO().type !$= "crim")
 			{
 				if((%client.getJobSO().type $= "donator") || (%client.getJobSO().type $= "sponsor"))
-					echo("crim");
+					//echo("crim");
 				else
 					return messageClient(%client,'',"Must be in criminal job to do this. -" SPC %client.getJobSO().type);
 			}
@@ -83,7 +83,7 @@ function CityRPGBankRobberyBrickData::parseData(%this, %brick, %client, %trigger
 			if(%client.getJobSO().type !$= "crim")
 			{
 				if((%client.getJobSO().type $= "donator") || (%client.getJobSO().type $= "sponsor"))
-					echo("crim");
+					//echo("crim");
 				else
 					return messageClient(%client,'',"Must be in criminal job to do this. -" SPC %client.getJobSO().type);
 			}

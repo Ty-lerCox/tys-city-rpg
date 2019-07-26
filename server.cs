@@ -16,15 +16,15 @@
 
 if(0 == 1)
 {
-	echo("=========================");
-	echo("CityRPG is a splinter project of CityRP after difficulties between Jookia and myself.");
-	echo("The intention of this mod was to provide players with the ability to see a block city from block eyes.");
-	echo("Of course CityRPG fails on this promise and is merely a really, really fucked up GameMode for blockland.");
-	echo("Although not the best handy-work of code to ever exist this is pretty much my biggest feat that has held together.");
-	echo("I enjoyed working with it but can now honestly say I am done.");
-	echo("This mod is provided as-is without warranty of functionality.");
-	echo("By circumventing this message in server.cs you declare that you are taking this mod for your own self interests and cant blame Iban for how bad it is.");
-	echo("=========================");
+	//echo("=========================");
+	//echo("CityRPG is a splinter project of CityRP after difficulties between Jookia and myself.");
+	//echo("The intention of this mod was to provide players with the ability to see a block city from block eyes.");
+	//echo("Of course CityRPG fails on this promise and is merely a really, really fucked up GameMode for blockland.");
+	//echo("Although not the best handy-work of code to ever exist this is pretty much my biggest feat that has held together.");
+	//echo("I enjoyed working with it but can now honestly say I am done.");
+	//echo("This mod is provided as-is without warranty of functionality.");
+	//echo("By circumventing this message in server.cs you declare that you are taking this mod for your own self interests and cant blame Iban for how bad it is.");
+	//echo("=========================");
 	return;
 }
 

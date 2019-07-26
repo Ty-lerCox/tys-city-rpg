@@ -253,7 +253,7 @@ function addEvid(%col,%client)
 
 function raycastExplosionProjectile::onCollision(%this,%obj,%col,%fade,%pos,%normal,%brick)
 {
-	echo("onCol");
+	//echo("onCol");
 	if(%col.getClassName() $= "fxDTSBrick")
 	{
 		%client = %obj.client;
@@ -361,7 +361,7 @@ function raycastExplosionProjectile::onCollision(%this,%obj,%col,%fade,%pos,%nor
 
 function CityRPGBatonImage::onHitObject(%this, %obj, %slot, %col, %pos, %normal)
 {
-	echo("hitobj");
+	//echo("hitobj");
 	%didAction = false;
 	if(%col.getClassName() $= "fxDTSBrick")
 	{

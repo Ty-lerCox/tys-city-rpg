@@ -32,13 +32,13 @@ registerInputEvent("fxDTSBrick", "onRepTrue",  "Self fxDTSBrick" TAB
                                                  "MiniGame MiniGame");
 
 function fxDtsBrick::RepCheck(%brick,%likemax,%hatemax,%client) {
-  echo(%brick SPC %likemax SPC %hatemax SPC %client);
+  //echo(%brick SPC %likemax SPC %hatemax SPC %client);
   %likes = %client.Reputation_Likes;
   %hates = %client.Reputation_Hates;
   
   if(%likes >= %likemax && %hates <= %hatemax) {
     //setup targets
-    echo("good");
+    //echo("good");
     %obj = %brick;
     //player = person who destroyed it
     $InputTarget_["Self"]   = %obj;
@@ -60,7 +60,7 @@ function fxDtsBrick::RepCheck(%brick,%likemax,%hatemax,%client) {
     %obj.processInputEvent("onRepTrue", %client);
   } else {
     //setup targets
-    echo("bad");
+    //echo("bad");
     %obj = %brick;
     //player = person who destroyed it
     $InputTarget_["Self"]   = %obj;
@@ -108,9 +108,9 @@ function Reputation_Load(%client) {
     }
     %file.close();
     %file.delete();
-    echo("Reputation- Loaded "@%client.name@"'s reputation. "@%client.Reputation_Likes@" likes, "@%client.Reputation_Hates@" haters.");
+    //echo("Reputation- Loaded "@%client.name@"'s reputation. "@%client.Reputation_Likes@" likes, "@%client.Reputation_Hates@" haters.");
   } else {
-    echo("Reputation- Tried loading "@%client.name@"'s reputation stats, but he does not have any likes or hates. Resetting");
+    //echo("Reputation- Tried loading "@%client.name@"'s reputation stats, but he does not have any likes or hates. Resetting");
     %client.Reputation_Likes = 0;
     %client.Reputation_Hates = 0;
   }

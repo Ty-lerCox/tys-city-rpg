@@ -80,7 +80,7 @@ package SpecialKills
             %pos1 = strPos(%msg,"%2");
             %pos2 = strPos(%msg,"%1");
            
-            //echo("SPECIAL KILL TYPE = " @ $SpecialDamage_TypeName[%i]);
+            ////echo("SPECIAL KILL TYPE = " @ $SpecialDamage_TypeName[%i]);
            
             if(%pos1 < 0)
             {
@@ -107,7 +107,7 @@ package SpecialKills
             %pos1 = strPos(%msg,"%1");
             %killerString = "";
            
-            //echo("SPECIAL SUICIDE TYPE = " @ $SpecialDamage_TypeName[%i]);
+            ////echo("SPECIAL SUICIDE TYPE = " @ $SpecialDamage_TypeName[%i]);
            
             if(%pos1 < 0)
             {
@@ -139,7 +139,7 @@ package SpecialKills
             %pos1 = strPos(%msg,"%2");
             %pos2 = strPos(%msg,"%1");
            
-            //echo("NORMAL KILL");
+            ////echo("NORMAL KILL");
            
             if(%pos1 < 0)
             {
@@ -165,7 +165,7 @@ package SpecialKills
             %pos1 = strPos(%msg,"%1");
             %killerString = "";
            
-            //echo("NORMAL SUICIDE");
+            ////echo("NORMAL SUICIDE");
            
             if(%pos1 < 0)
             {

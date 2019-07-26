@@ -111,7 +111,7 @@ function fxDTSBrick::OnContentLockPick(%brick, %client)
  
  if (%brick.BustOpenDoor(%client))
  {
- echo("Lock Pick Hit Door");
+ //echo("Lock Pick Hit Door");
  }
 }
 function player::activateStuff(%this)

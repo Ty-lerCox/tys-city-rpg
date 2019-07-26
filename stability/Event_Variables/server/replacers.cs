@@ -157,7 +157,7 @@ function filterVariableString(%string,%brick,%client,%player,%vehicle)
 function registerSpecialVar(%classname,%name,%script,%editscript,%arg1,%arg2,%arg3,%arg4)
 {
 	if($VCE::Server::SpecialVar[%classname,%name] !$= "")
-		echo("registerSpecialVar() - Variable" SPC %name SPC "already exists on" SPC %classname @ ". Overwriting...");
+		//echo("registerSpecialVar() - Variable" SPC %name SPC "already exists on" SPC %classname @ ". Overwriting...");
 	$VCE::Server::SpecialVar[%classname,%name] = %script;
 	$VCE::Server::SpecialVarEdit[%classname,%name] = %editscript;
 	$VCE::Server::SpecialVarEditArg1[%classname,%name] = %arg1;
@@ -172,7 +172,7 @@ function isSpecialVar(%classname,%name)
 function unregisterSpecialVar(%classname,%name)
 {
 	if($VCE::Server::SpecialVar[%classname,%name] $= "")
-		return echo("unregisterSpecialVar() - Variable" SPC %name SPC " does not exist on" SPC %classname @ ". Can not un-register.");
+		return //echo("unregisterSpecialVar() - Variable" SPC %name SPC " does not exist on" SPC %classname @ ". Can not un-register.");
 	$VCE::Server::SpecialVar[%classname,%name] = "";
 	$VCE::Server::SpecialVarEdit[%classname,%name] = "";
 	$VCE::Server::SpecialVarEditArg1[%classname,%name] = "";
