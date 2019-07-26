@@ -2295,13 +2295,13 @@ function gameConnection::setGameBottomPrint(%client)
 {
 	
     if(%mainfont $= "")
-	    %mainFont = "<font:BrowalliaUPC:30>";
+    	%mainFont = "<font:palatino linotype:20>";
 
 	%client.CityRPGPrint = %mainFont;
 	%client.CityRPGPrintBusiness = %mainFont;
 	%client.CityRPGPrintGang = %mainFont;
 	
-	%mainFont2 = "<just:right><font:BrowalliaUPC:30>";
+	%mainFont2 = "<just:right><font:palatino linotype:20>";
 	%client.CityRPGPrintCenter = %mainFont2;
 
     %color = CityRPGData.getData(%client.bl_id).valueLayout;    
@@ -2313,44 +2313,18 @@ function gameConnection::setGameBottomPrint(%client)
 		CityRPGData.getData(%client.bl_id).valueBusStocks = "";
 	}
 	
-	
-		
-//			%client.CityRPGPrintBusiness = %client.CityRPGPrintBusiness @ %color @ "Business Name: \c6" @ getBusiness(CityRPGData.getData(%client.bl_id).valueBusID, "Name");
-		
-//			%client.CityRPGPrintBusiness = %client.CityRPGPrintBusiness SPC %color @ "Account: \c6" @ getBusiness(CityRPGData.getData(%client.bl_id).valueBusID, "Money");
-		
-//			%client.CityRPGPrintBusiness = %client.CityRPGPrintBusiness SPC %color @ "Position: \c6" @ CityRPGData.getData(%client.bl_id).valueBusPosition @ "<br>";
-		
-//			%client.CityRPGPrintBusiness = %client.CityRPGPrintBusiness @ %color @ "Stocks: \c6" @ CityRPGData.getData(%client.bl_id).valueBusStocks;
-    	
-//			%client.CityRPGPrintBusiness = %client.CityRPGPrintBusiness SPC %color @ "Income Per Stock: \c6" @ getBusiness(CityRPGData.getData(%client.bl_id).valueBusID, "OriginalStocks")/10/10 @ "<BR>";
-    	
-//			%client.CityRPGPrintBusiness = %client.CityRPGPrintBusiness SPC %color @ "Total Income: \c6" @ CityRPGData.getData(%client.bl_id).valueBusStocks * getBusiness(CityRPGData.getData(%client.bl_id).valueBusID, "OriginalStocks")/10/10;
-    	
-//			%client.CityRPGPrintBusiness = %client.CityRPGPrintBusiness SPC %color @ "Count: \c6" @ getMembers(CityRPGData.getData(%client.bl_id).valueBusID)/10/10;
-			
-	
-		
-			%client.CityRPGPrintGang = %client.CityRPGPrintGang @ %color @ "Name: \c6" @ getGang(CityRPGData.getData(%client.bl_id).valueGangID, "Name");
-		
-			%client.CityRPGPrintGang = %client.CityRPGPrintGang SPC %color @ "Rank: \c6" @ CityRPGData.getData(%client.bl_id).valueGangPosition;
-		
-			%client.CityRPGPrintGang = %client.CityRPGPrintGang SPC %color @ "<br>Storage: \c6( \c3$" @ getGang(CityRPGData.getData(%client.bl_id).valueGangID, "Money") @ "\c6 | \c3" @ getGang(CityRPGData.getData(%client.bl_id).valueGangID, "Lumber") @ " lumber\c6 )";
-		
-			%client.CityRPGPrintGang = %client.CityRPGPrintGang SPC %color @ "<br>Online Members: \c6" @ getGangCount(CityRPGData.getData(%client.bl_id).valueGangID);
-		
+	%client.CityRPGPrintGang = %client.CityRPGPrintGang @ %color @ "Name: \c6" @ getGang(CityRPGData.getData(%client.bl_id).valueGangID, "Name");
+
+	%client.CityRPGPrintGang = %client.CityRPGPrintGang SPC %color @ "Rank: \c6" @ CityRPGData.getData(%client.bl_id).valueGangPosition;
+
+	%client.CityRPGPrintGang = %client.CityRPGPrintGang SPC %color @ "<br>Storage: \c6( \c3$" @ getGang(CityRPGData.getData(%client.bl_id).valueGangID, "Money") @ "\c6 | \c3" @ getGang(CityRPGData.getData(%client.bl_id).valueGangID, "Lumber") @ " lumber\c6 )";
+
+	%client.CityRPGPrintGang = %client.CityRPGPrintGang SPC %color @ "<br>Online Members: \c6" @ getGangCount(CityRPGData.getData(%client.bl_id).valueGangID);
 	
     if($Mayor::Current $= "")
         %client.CityRPGPrint = %client.CityRPGPrint @ "" @ %color @ "" @ %color @ "Mayor: \c6None<br>";
     else
         %client.CityRPGPrint = %client.CityRPGPrint @ "" @ %color @ "" @ %color @ "Mayor: \c6" SPC $Mayor::Current @ "<br>";
-    
-    
-    
-    
-    //%client.CityRPGPrintCenter = %client.CityRPGPrintCenter SPC " " @ %color @ "TopGang:<br>\c6" @ getTopGang() @ "[\c0" @ getTopGangScore() @ "\c6]  <br>";
-    
-
     
     %health = 100 - %client.player.getDamageLevel();
     if(%health > 90) 
