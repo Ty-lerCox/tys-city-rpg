@@ -245,7 +245,7 @@ function FxDtsBrick::getStack(%brick,%player)
 	%final = 1;
 	for(%current = 0; %current != %final; %current++)
 	{
-		if((((%player.client.isAdmin) || (%player.client.canBuild)) && $Pref::Duplorcator::MaxBricks <= %stack.getCount()) || (((!%player.client.isAdmin) && (!%player.client.canBuild)) && $Pref::Duplorcator::MaxBricksB <= %stack.getCount()))
+		if((%player.client.isAdmin && $Pref::Duplorcator::MaxBricks <= %stack.getCount()) || (!%player.client.isAdmin && $Pref::Duplorcator::MaxBricksB <= %stack.getCount()))
 		{
 			%stack.err = "Limit";
 			return %stack;
@@ -487,7 +487,6 @@ function servercmdSaveDup(%client,%name)
 		commandToClient(%client,'centerPrint',"<color:99AAAA>You must be an \c4Admin<color:99AAAA> to use the \c4Duplorcator",3);
 		return;
 	}
-	$Pref::Duplorcator::AdminLoad = true;
 	if($Pref::Duplorcator::AdminLoad)
 	{
 		commandToClient(%client,'centerPrint',"<color:99AAAA>You must be an \c4Admin<color:99AAAA> to save duplications",3);
@@ -587,7 +586,7 @@ function DuplorcatorImage::onFire(%this,%player)
 		%p.explode();
 		if(%ray.getClassName() !$= "FxDtsBrick")
 			return;
-		if(((!%player.client.isAdmin) && (!%player.client.canBuild)) && $Pref::Duplorcator::AdminOnly)
+		if(!%player.client.isAdmin && $Pref::Duplorcator::AdminOnly)
 		{
 			commandToClient(%player.client,'centerPrint',"<color:99AAAA>You must be an \c4Admin<color:99AAAA> to use the \c4Duplorcator",3);
 			return;
@@ -597,7 +596,7 @@ function DuplorcatorImage::onFire(%this,%player)
 			commandtoclient(%player.client,'centerPrint',%ray.getGroup().name @ " does not trust you enough to do that.");
 			return;
 		}
-		if((%player.client.isAdmin) || (%player.client.canBuild))
+		if(%player.client.isAdmin)
 			%length = $Pref::Duplorcator::SelectionTimeout*1000;
 		else
 			%length = $Pref::Duplorcator::SelectionTimeoutB*1000;
@@ -677,7 +676,7 @@ package Duplorcator
 			Parent::servercmdPlantBrick(%client);
 			return;
 		}
-		if($Pref::Duplorcator::AdminOnly && ((!%player.client.isAdmin) && (!%player.client.canBuild)))
+		if($Pref::Duplorcator::AdminOnly && !%client.isAdmin)
 		{
 			commandToClient(%client,'centerPrint',"<color:99AAAA>You must be an \c4Admin<color:99AAAA> to use the \c4Duplorcator",3);
 			return;
@@ -690,7 +689,7 @@ package Duplorcator
 			return;
 		}
 		//Check Plant timeout
-		if((%player.client.isAdmin) || (%player.client.canBuild))
+		if(%client.isAdmin)
 			%length = $Pref::Duplorcator::PlantTimeout*1000;
 		else
 			%length = $Pref::Duplorcator::PlantTimeoutB*1000;
