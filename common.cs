@@ -415,7 +415,7 @@ function CityRPG_BuildMinigame()
 		enableBuilding = true;
 		enablePainting = true;
 		enableWand = true;
-		fallingDamage = true;
+		fallingDamage = false;
 		inviteOnly = false;
 		
 		points_plantBrick = 0;
